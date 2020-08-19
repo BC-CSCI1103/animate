@@ -1,0 +1,5 @@
+SOURCES = color.mli color.ml
+PACKS = lablgtk2
+RESULT = color
+OCAMLMAKEFILE = ../OCamlMakefile
+include $(OCAMLMAKEFILE)

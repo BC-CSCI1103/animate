@@ -1,0 +1,5 @@
+SOURCES = animate.mli animate.ml
+PACKS = cairo2-gtk
+RESULT = animate
+OCAMLMAKEFILE = ../OCamlMakefile
+include $(OCAMLMAKEFILE)

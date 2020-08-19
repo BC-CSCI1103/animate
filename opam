@@ -1,0 +1,19 @@
+opam-version: "2.0"
+name: "animate"
+version: "0.0"
+authors: ["Bob Muller"]
+maintainer: ["Bob Muller <robert.muller@bc.edu>"]
+homepage: "http://www.cs.bc.edu/~muller/"
+bug-reports: "https://github.com/BC-CSCI1103/animate/issues"
+build: [
+  ["cp" "%{lib}%/ocaml-makefile/OCamlMakefile" "."]
+  ["sh" "-c" "cd library && %{make}% bcl ncl"]
+]
+install: ["sh" "-c" "cd library && %{make}% install"]
+remove: ["ocamlfind" "remove" "animate"]
+depends: ["ocamlfind"
+          "cairo2" {>= "0.6"}
+          "cairo2-gtk"
+          "conf-gnomecanvas"
+          "lablgtk"
+          "ocaml-makefile"]

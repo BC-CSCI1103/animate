@@ -1,0 +1,24 @@
+version = "0.9"
+description = "Animate library for writing interactive animations"
+requires = "animate.color animate.image"
+archive(byte) = "animate.cma"
+archive(native) = "animate.cmxa"
+exists_if = "animate.cma"
+
+package "color" (
+  version = "0.0"
+  description = "Color subpackage for Animate library"
+  requires = "lablgtk2"
+  archive(byte) = "color.cma"
+  archive(native) = "color.cmxa"
+  exists_if = "color.cma"
+)
+
+package "image" (
+  version = "0.0"
+  description = "Image subpackage for Animate library"
+  requires = "cairo2-gtk"
+  archive(byte) = "image.cma"
+  archive(native) = "image.cmxa"
+  exists_if = "image.cma"
+)
