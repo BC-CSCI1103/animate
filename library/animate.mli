@@ -17,7 +17,7 @@ val start :
   ?onMouse:('a -> int -> int -> string -> 'a) ->
   ?onKeyPress:('a -> string -> 'a) ->
   ?onKeyRelease:('a -> string -> 'a) ->
-  ?rate:int ->
+  ?rate:float ->
   ?stopWhen:('a -> bool) ->
   ?viewLast:('a -> Image.t) ->
   'a -> unit

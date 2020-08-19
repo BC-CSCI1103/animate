@@ -38,7 +38,7 @@ let start ?(name="Anon")
     ?(onMouse=initialMouse)
     ?(onKeyPress=initialKey)
     ?(onKeyRelease=initialKey)
-    ?(rate=1)
+    ?(rate=1.0)
     ?(stopWhen=initialStop)
     ?viewLast
     model
@@ -63,7 +63,7 @@ let start ?(name="Anon")
 
   (* rate : int
      NB: the rate on the right is from start, measured in ms *)
-  let rate = 1000 * rate in
+  let rate = 1000. *. rate in
 
   let border = 0 in
 
@@ -173,7 +173,7 @@ let start ?(name="Anon")
   ignore (window#event#connect#button_release ~callback:mousereleased);
   ignore (window#event#connect#key_press ~callback:keypressed);
   ignore (window#event#connect#key_release ~callback:keyreleased);
-  ignore (GMain.Timeout.add ~ms:rate ~callback:time_event);
+  ignore (GMain.Timeout.add ~ms:(int_of_float rate) ~callback:time_event);
   ignore (window#event#connect#delete ~callback:delete_event);
 
   (* Get things started, then run again by events *)
