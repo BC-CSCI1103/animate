@@ -85,6 +85,7 @@ let start ?(name="Anon")
 
   let draw_window draw =
     begin
+      print_endline "in draw_window ...";
       clear window;
       let drawing_area =
         GMisc.drawing_area ~width ~height ~packing:window#add () in
@@ -103,6 +104,7 @@ let start ?(name="Anon")
 
   (* updateAndView : 'a -> unit *)
   let updateAndView model =
+print_endline "in updateAndView ...";
     if !running then
       begin
         modelRef := model;
@@ -169,6 +171,7 @@ let start ?(name="Anon")
 
   window#event#add [`BUTTON_PRESS; `BUTTON_RELEASE; `KEY_PRESS; `KEY_RELEASE];
 
+  print_endline "in top level, about to install callbacks ...";
   (* install the event handler callbacks *)
   ignore (window#event#connect#button_press ~callback:mousepressed);
   ignore (window#event#connect#button_release ~callback:mousereleased);
