@@ -22,9 +22,7 @@ let argv = Array.of_list (List.rev !rev_argv_list)
 let initialTick w = w
 
 (* initialMouse : 'a -> 'b -> 'c -> 'd -> 'a *)
-let initialMouse w _ _ _ =
-  print_endline "in initialMouse ...";
-w
+let initialMouse w _ _ _ = w
 
 (* initialKey : 'a -> 'b -> 'a *)
 let initialKey w _ = w
