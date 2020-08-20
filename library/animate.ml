@@ -43,6 +43,7 @@ let start ?(name="Anon")
     ?viewLast
     model
   =
+  print_endline "in Animate.start, just started ...";
   (* initialView : 'a -> Image.t *)
   let initialView _ = Image.empty width height in
 
