@@ -67,6 +67,7 @@ let start ?(name="Anon")
 
   let border = 0 in
 
+  print_endline "in top level, about to call GWindow.window ...";
   let window = GWindow.window ~border_width:border
       ~title:name
       ~show:false
@@ -104,7 +105,7 @@ let start ?(name="Anon")
 
   (* updateAndView : 'a -> unit *)
   let updateAndView model =
-print_endline "in updateAndView ...";
+  print_endline "in updateAndView ...";
     if !running then
       begin
         modelRef := model;
@@ -169,6 +170,7 @@ print_endline "in updateAndView ...";
 
   (* start *)
 
+  print_endline "in top level, about to add events ...";
   window#event#add [`BUTTON_PRESS; `BUTTON_RELEASE; `KEY_PRESS; `KEY_RELEASE];
 
   print_endline "in top level, about to install callbacks ...";
