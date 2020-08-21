@@ -8,6 +8,13 @@
 (* 色 *)
 type t = int32
 
+let random () =
+  let red   = Random.int 256 in
+  let green = Random.int 256 in
+  let blue  = Random.int 256
+  in
+  Color.make_color red green blue
+
 let asciiA_10 = Char.code 'A' - 10
 
 let rec to_hex n =      (* １６進文字列に変換する *)

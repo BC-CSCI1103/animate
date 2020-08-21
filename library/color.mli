@@ -5,6 +5,8 @@ type t
 (** @en [Color.t] : the type of colors
     @ja [Color.t] : 色の型 *)
 
+val random : unit -> t
+
 val make_color : ?alpha: int -> int -> int -> int -> t
 (** @en [make_color r g b ~alpha:a] : creates a color from RGB and
                                       optional alpha (default: 255)
