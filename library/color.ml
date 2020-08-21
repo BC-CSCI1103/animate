@@ -51,6 +51,8 @@ let to_rgb color =
 (* convert a color into int32 *)
 let to_int32 color = color
 
+let make_color = makeColor
+
 (* These colors : Color.t *)
 let transparent         = make_color 255 255 255 ~alpha:0
 let snow                = make_color 255 250 250
