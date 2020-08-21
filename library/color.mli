@@ -7,10 +7,10 @@ type t
 
 val random : unit -> t
 
-val make_color : ?alpha: int -> int -> int -> int -> t
-(** @en [make_color r g b ~alpha:a] : creates a color from RGB and
+val makeColor : ?alpha: int -> int -> int -> int -> t
+(** @en [makeColor r g b ~alpha:a] : creates a color from RGB and
                                       optional alpha (default: 255)
-    @ja [make_color r g b ~alpha:a] : RGB と透過率 A から色を作る。
+    @ja [makeColor r g b ~alpha:a] : RGB と透過率 A から色を作る。
                                       透過率は省略すると 255 になる *)
 
 val to_rgba : t -> int * int * int * int

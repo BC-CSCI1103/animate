@@ -8,13 +8,6 @@
 (* 色 *)
 type t = int32
 
-let random () =
-  let red   = Random.int 256 in
-  let green = Random.int 256 in
-  let blue  = Random.int 256
-  in
-  Color.make_color red green blue
-
 let asciiA_10 = Char.code 'A' - 10
 
 let rec to_hex n =      (* １６進文字列に変換する *)
@@ -26,10 +19,18 @@ let rec to_hex n =      (* １６進文字列に変換する *)
                else String.make 1 (Char.chr (asciiA_10 + one)))
 
 (* 透過率の初期値は255 *)
-let make_color ?(alpha = 255) r g b =
+let makeColor ?(alpha = 255) r g b =
   Int32.add (Int32.mul (Int32.of_int ((r * 256 + g) * 256 + b))
                        (Int32.of_int 256))
             (Int32.of_int alpha)
+
+let random () =
+  let red   = Random.int 256 in
+  let green = Random.int 256 in
+  let blue  = Random.int 256
+  in
+  makeColor red green blue
+
 
 (* convert a color into RGBA *)
 let to_rgba rgba =
