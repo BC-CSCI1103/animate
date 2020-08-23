@@ -1,4 +1,5 @@
 SOURCES = color.mli color.ml
+OCAMLFLAGS="-opaque"
 PACKS = lablgtk2
 RESULT = color
 OCAMLMAKEFILE = ../OCamlMakefile

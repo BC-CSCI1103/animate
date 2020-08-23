@@ -1,4 +1,5 @@
 SOURCES = animate.mli animate.ml
+OCAMLFLAGS="-opaque"
 PACKS = cairo2-gtk
 RESULT = animate
 OCAMLMAKEFILE = ../OCamlMakefile
