@@ -152,7 +152,6 @@ let start ?(name="Anon")
 
   (* The Clock Tick Event *************************************)
   let time_event _ =
-    print_string "in time_event ...";
     let model = onTick !modelRef in
     updateAndView model;
     true
