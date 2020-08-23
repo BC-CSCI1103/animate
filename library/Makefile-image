@@ -1,4 +1,5 @@
 SOURCES = image.mli image.ml
+OCAMLFLAGS="-opaque"
 PACKS = cairo2-gtk
 RESULT = image
 OCAMLMAKEFILE = ../OCamlMakefile
