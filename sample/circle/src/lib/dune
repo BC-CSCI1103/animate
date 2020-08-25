@@ -1,0 +1,3 @@
+(library
+(flags -opaque)
+(name lib))
