@@ -22,3 +22,11 @@ package "image" (
   archive(native) = "image.cmxa"
   exists_if = "image.cma"
 )
+
+package "lib" (
+  version = "0.0"
+  description = "Lib subpackage for the Animate library"
+  archive(byte) = "lib.cma"
+  archive(native) = "lib.cmxa"
+  exists_if = "lib.cma"
+)

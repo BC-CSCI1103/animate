@@ -1,0 +1,8 @@
+SOURCES = lib.mli lib.ml
+OCAMLFLAGS="-opaque"
+export THREADS = y
+
+#PACKS = cairo2-gtk
+RESULT = lib
+OCAMLMAKEFILE = ../OCamlMakefile
+include $(OCAMLMAKEFILE)
