@@ -1,7 +1,6 @@
 opam-version: "2.0"
 name: "animate"
 version: "0.1"
-synopsis: "A library for supporting learning to code in CSCI 1103 at BC"
 authors: ["Bob Muller"]
 maintainer: ["Bob Muller <robert.muller@bc.edu>"]
 homepage: "http://www.cs.bc.edu/~muller/"
