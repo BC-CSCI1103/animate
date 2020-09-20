@@ -2,6 +2,7 @@ opam-version: "2.0"
 name: "animate"
 version: "0.1"
 authors: ["Bob Muller"]
+synopsis: "A simple graphics and animation library for CSCI 1103"
 maintainer: ["Bob Muller <robert.muller@bc.edu>"]
 homepage: "http://www.cs.bc.edu/~muller/"
 bug-reports: "https://github.com/BC-CSCI1103/animate/issues"
