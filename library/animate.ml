@@ -31,8 +31,8 @@ let initialKey w _ = w
 let initialStop _ = false
 
 let start ?(name="Anon")
-    ?(width=300)
-    ?(height=300)
+    ?(width=300.0)
+    ?(height=300.0)
     ?view
     ?(onTick=initialTick)
     ?(onMouse=initialMouse)
@@ -65,14 +65,14 @@ let start ?(name="Anon")
      NB: the rate on the right is from start, measured in ms *)
   let rate = 1000. *. rate in
 
-  let border = 0 in
+  let border = 0.0 in
 
-  let window = GWindow.window ~border_width:border
+  let window = GWindow.window ~border_width:(int_of_float border)
       ~title:name
       ~show:false
       ~resizable:false
-      ~width:width
-      ~height:height
+      ~width:(int_of_float width)
+      ~height:(int_of_float height)
       () in
 
   let modelRef = ref model in
@@ -86,6 +86,7 @@ let start ?(name="Anon")
   let draw_window draw =
     begin
       clear window;
+      let width, height = int_of_float width, int_of_float height in
       let drawing_area =
         GMisc.drawing_area ~width ~height ~packing:window#add () in
       let expose drawingarea ev =
@@ -119,8 +120,8 @@ let start ?(name="Anon")
 
   (* Mouse *************************************************)
   let mouse_event str ev =
-    let nowx = int_of_float(GdkEvent.Button.x ev) - border in
-    let nowy = int_of_float(GdkEvent.Button.y ev) - border in
+    let nowx = (GdkEvent.Button.x ev) -. border in
+    let nowy = (GdkEvent.Button.y ev) -. border in
     let model = onMouse !modelRef nowx nowy str
     in
     updateAndView model;
